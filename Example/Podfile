@@ -1,0 +1,6 @@
+use_frameworks!
+target 'WCharts_Tests' do
+  pod 'WCharts', :path => '../'
+  
+  
+end
