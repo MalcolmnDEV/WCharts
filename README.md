@@ -27,3 +27,4 @@ MalcolmnDEV, robertsmalcolmn@gmail.com
 ## License
 
 WCharts is available under the MIT license. See the LICENSE file for more info.
+# WCharts
