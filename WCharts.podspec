@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'WCharts'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of WCharts.'
+  s.summary          = 'WCharts is a powerful & easy to use chart library for iOS, forked from the Charts library'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Charts is a powerful & easy to use chart library for iOS, forked from the Charts library
                        DESC
 
   s.homepage         = 'https://github.com/MalcolmnDEV/WCharts'
@@ -27,10 +27,13 @@ TODO: Add long description of the pod here.
   s.author           = { 'MalcolmnDEV' => 'robertsmalcolmn@gmail.com' }
   s.source           = { :git => 'https://github.com/MalcolmnDEV/WCharts.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.default_subspec = "Core"
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '14.0'
 
-  s.source_files = 'WCharts/Classes/**/*'
+  s.subspec "Core" do |ss|
+    ss.source_files  = "Source/WCharts/**/*.swift"
+  end
   
   # s.resource_bundles = {
   #   'WCharts' => ['WCharts/Assets/*.png']
