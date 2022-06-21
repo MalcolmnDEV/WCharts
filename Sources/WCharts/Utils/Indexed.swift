@@ -11,15 +11,23 @@
 
 /// A collection wrapper that iterates over the indices and elements of a
 /// collection together.
+//public struct IndexedCollection<Base: Collection> {
+//    /// The base collection.
+//    @usableFromInline
+//    internal let base: Base
+//
+//    @inlinable
+//    internal init(base: Base) {
+//        self.base = base
+//    }
+//}
+
 public struct IndexedCollection<Base: Collection> {
-  /// The base collection.
-  @usableFromInline
-  internal let base: Base
-  
-  @inlinable
-  internal init(base: Base) {
-    self.base = base
-  }
+    public init(base: Base) {
+        self.base = base
+    }
+
+    public let base: Base
 }
 
 extension IndexedCollection: Collection {
