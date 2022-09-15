@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'WCharts'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'WCharts is a powerful & easy to use chart library for iOS, forked from the Charts library'
 
 # This description is used to generate tags and improve search results.

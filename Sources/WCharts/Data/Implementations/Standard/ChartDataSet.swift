@@ -9,6 +9,7 @@
 //  https://github.com/danielgindi/Charts
 //
 
+import Algorithms
 import Foundation
 
 /// Determines how to round DataSet index values for `ChartDataSet.entryIndex(x, rounding)` when an exact x-value is not found.
@@ -241,8 +242,11 @@ open class ChartDataSet: ChartBaseDataSet
             // doesn't guarantee closest rounding method
             if closest > startIndex {
                 let distanceAfter = abs(self[closest].x - xValue)
-                let distanceBefore = abs(self[closest-1].x - xValue)
-                distanceBefore < distanceAfter ? closest -= 1 : ()
+                let distanceBefore = abs(self[index(before: closest)].x - xValue)
+                if distanceBefore < distanceAfter
+                {
+                    closest = index(before: closest)
+                }
                 closestXValue = self[closest].x
             }
         }
@@ -438,7 +442,7 @@ extension ChartDataSet: RangeReplaceableCollection {
         entries.replaceSubrange(subrange, with: newElements)
         notifyDataSetChanged()
     }
-
+    
     public func append(_ newElement: Element) {
         calcMinMax(entry: newElement)
         entries.append(newElement)
